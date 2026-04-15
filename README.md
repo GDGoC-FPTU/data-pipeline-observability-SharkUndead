@@ -1,14 +1,24 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=23574056&assignment_repo_type=AssignmentRepo)
 # Day 10 Lab: Data Pipeline & Data Observability
 
-**Student Email:** email@example.com
-**Name:** (Dien ten cua ban)
+**Student Email:** nguyenduyhieu03112003@gmail.com
+**Name:** Nguyễn Duy Hiếu
 
 ---
 
 ## Mo ta
 
-(Mo ta ngan gon bai lab va nhung gi ban da lam)
+Dự án này xây dựng một **Automated ETL Pipeline** hoàn chỉnh để xử lý dữ liệu thô cho các hệ thống AI.
+
+Pipeline thực hiện các nhiệm vụ:
+- Trích xuất dữ liệu từ JSON  
+- Kiểm tra chất lượng (**Validation**)  
+- Biến đổi dữ liệu (**Transformation**)  
+- Lưu trữ dữ liệu sạch vào CSV  
+
+🎯 **Mục tiêu:**
+- Loại bỏ dữ liệu "độc hại" (*toxic data*)  
+- Đánh giá ảnh hưởng của chất lượng dữ liệu đến phản hồi của AI Agent
 
 ---
 
@@ -26,7 +36,8 @@ python solution.py
 
 ### Chay Agent Simulation (Stress Test)
 ```bash
-# Mo ta cach ban chay thi nghiem Clean vs Garbage data
+python generate_garbage.py
+python agent_simulation.py
 ```
 
 ---
@@ -34,14 +45,21 @@ python solution.py
 ## Cau truc thu muc
 
 ```
-├── solution.py              # ETL Pipeline script
-├── processed_data.csv       # Output cua pipeline
-├── experiment_report.md     # Bao cao thi nghiem
-└── README.md                # File nay
+├── solution.py              # Script xử lý ETL chính
+├── processed_data.csv       # Kết quả dữ liệu sạch
+├── experiment_report.md     # Báo cáo phân tích
+├── generate_garbage.py      # Tạo dữ liệu lỗi
+├── agent_simulation.py      # Mô phỏng AI
+└── README.md                # Tài liệu dự án
 ```
 
 ---
 
 ## Ket qua
 
-(Tom tat ket qua: bao nhieu records da xu ly, bao nhieu bi loai, v.v.)
+Dựa trên kết quả thực tế:
+
+- Tổng số bản ghi: **5 records**  
+- Hợp lệ: **3 records**  
+- Bị loại: **2 records**  
+  - Giá ≤ 0  
